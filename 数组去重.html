@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	//去掉一个数组的重复元素
+	
+	//'{"name":"leo"}'
+	
+	var arr = ['1',1,2,3,4,6,7,89,2,1,89,'1'];
+	
+	Array.prototype.qc = function(){
+		var obj = {};
+		var arr2 = [];
+		for(var i=0;i<this.length;i++){
+			// debugger;
+			
+			if(!obj[typeof arr[i]+arr[i]]){//对类型进行判断再与对应的值进行拼接，判断obj
+				arr2.push(arr[i]);
+				obj[typeof arr[i]+arr[i]] = 1;
+			}
+		}
+		return arr2;
+	}
+	 
+//	function qc(arr){
+//		var obj = {};
+//		var arr2 = [];
+//		for(var i=0;i<arr.length;i++){
+//			if(!obj[typeof arr[i]+arr[i]]){
+//				arr2.push(arr[i]);
+//				obj[typeof arr[i]+arr[i]] = 1;
+//			}
+//		}
+//		return arr2;
+//	}
+
+	
+	console.log(arr.qc())
+	//console.log(qc(arr));
+	
+</script>
+</html>
